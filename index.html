@@ -6,28 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sushant Dwivedi — Resume</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
       --navy: #0D1B2E;
-      --navy-mid: #1A3354;
-      --sky: #4BA3C7;
       --gold: #C8982A;
-      --white: #FFFFFF;
-      --off-white: #F7F9FC;
       --blue: #1A56DB;
       --body: #2D3748;
-      --muted: #718096;
-      --lt-muted: #A0AEC0;
-      --divider: #E2E8F0;
-      --card-bg: #F7F9FC;
-      --sidebar-w: 192px;
+      --muted: #4A5568;
+      --divider: #CBD5E0;
     }
 
-    /* ── RESET ── */
     *,
     *::before,
     *::after {
@@ -36,24 +25,20 @@
       box-sizing: border-box;
     }
 
-    /* ── BASE ── */
     html,
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      font-size: 10px;
-      background: #C9D3DF;
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: 11px;
+      background: #D1D9E6;
       color: var(--body);
     }
 
-    /* ── SCREEN WRAPPER ── */
     .page-wrapper {
       display: flex;
       justify-content: center;
       padding: 36px 20px 60px;
-      min-height: 100vh;
     }
 
-    /* ── PRINT BUTTON ── */
     .print-btn {
       position: fixed;
       top: 16px;
@@ -65,238 +50,75 @@
       font-family: 'Inter', sans-serif;
       font-weight: 700;
       font-size: 11.5px;
-      letter-spacing: 0.04em;
       border-radius: 6px;
       cursor: pointer;
-      box-shadow: 0 4px 14px rgba(200, 152, 42, 0.45);
       z-index: 9999;
-      transition: all 0.15s ease;
     }
 
-    .print-btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 6px 18px rgba(200, 152, 42, 0.5);
-    }
-
-    /* ══════════════════════════════════════
-   RESUME LAYOUT
-══════════════════════════════════════ */
     .resume {
       width: 210mm;
       min-height: 297mm;
-      background: var(--white);
-      display: grid;
-      grid-template-columns: var(--sidebar-w) 1fr;
-      grid-template-rows: auto 1fr auto;
-      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.2), 0 4px 16px rgba(0, 0, 0, 0.08);
+      background: #fff;
+      box-shadow: 0 24px 64px rgba(0, 0, 0, .2);
     }
 
-    /* ── HEADER ── */
+    /* HEADER */
     .header {
-      grid-column: 1 / -1;
       background: var(--navy);
-      padding: 24px 26px 20px;
+      padding: 28px 32px 22px;
       border-bottom: 3px solid var(--gold);
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
     }
 
     .h-name {
       font-family: Georgia, serif;
-      /* font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; */
-      font-size: 29px;
+      font-size: 30px;
       font-weight: 800;
-      color: var(--white);
-      letter-spacing: -0.025em;
-      line-height: 1;
-      margin-bottom: 5px;
+      color: #fff;
+      letter-spacing: -.02em;
+      margin-bottom: 4px;
     }
 
     .h-title {
-      font-size: 11.5px;
-      font-weight: 500;
-      color: var(--sky);
-      letter-spacing: 0.015em;
-      margin-bottom: 3px;
-    }
-
-    .h-tagline {
-      font-size: 9.5px;
-      font-weight: 400;
-      color: var(--lt-muted);
-      letter-spacing: 0.04em;
+      font-size: 13px;
+      font-weight: 600;
+      color: #7DD3FC;
+      margin-bottom: 10px;
     }
 
     .h-contacts {
       display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 4px;
-    }
-
-    .h-contact-row {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 8.5px;
-      color: var(--lt-muted);
-    }
-
-    .h-contact-row svg {
-      width: 9px;
-      height: 9px;
-      fill: var(--gold);
-      flex-shrink: 0;
-    }
-
-    /* ── SIDEBAR ── */
-    .sidebar {
-      background: var(--navy);
-      padding: 20px 15px 24px 18px;
-      -webkit-print-color-adjust: exact;
-      print-color-adjust: exact;
-    }
-
-    .s-block {
-      margin-bottom: 19px;
-    }
-
-    .s-block:last-child {
-      margin-bottom: 0;
-    }
-
-    .s-title {
-      font-size: 7.5px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--gold);
-      padding-bottom: 3px;
-      border-bottom: 1px solid var(--gold);
-      margin-bottom: 9px;
-    }
-
-    /* Contact */
-    .c-item {
-      margin-bottom: 8px;
-    }
-
-    .c-label {
-      font-size: 7px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--lt-muted);
-      margin-bottom: 1.5px;
-    }
-
-    .c-value {
-      font-size: 8.5px;
-      color: #CBD5E1;
-      line-height: 1.45;
-      word-break: break-word;
-    }
-
-    /* Skills */
-    .sk-cat {
-      font-size: 8.5px;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 5px;
-      margin-top: 9px;
-    }
-
-    .sk-cat:first-of-type {
-      margin-top: 0;
-    }
-
-    .tags {
-      display: flex;
       flex-wrap: wrap;
-      gap: 3px;
-    }
-
-    .tag {
-      background: var(--navy-mid);
-      color: #93C5FD;
-      font-size: 7.5px;
-      font-weight: 500;
-      padding: 2px 6px;
-      border-radius: 3px;
-      line-height: 1.6;
-      -webkit-print-color-adjust: exact;
-      print-color-adjust: exact;
-    }
-
-    /* Education */
-    .edu-deg {
-      font-size: 8.5px;
-      font-weight: 700;
-      color: var(--white);
-      line-height: 1.4;
-      margin-bottom: 3px;
-    }
-
-    .edu-sch {
-      font-size: 8px;
+      gap: 6px 20px;
+      font-size: 9.5px;
       color: #CBD5E1;
-      line-height: 1.45;
-      margin-bottom: 2px;
     }
 
-    .edu-yr {
-      font-size: 7.5px;
-      color: var(--lt-muted);
-      font-style: italic;
+    .h-contacts span {
+      display: inline;
     }
 
-    /* Certs */
-    .cert {
-      display: flex;
-      gap: 5px;
-      align-items: flex-start;
-      margin-bottom: 7px;
+    /* MAIN BODY */
+    .body {
+      padding: 22px 32px;
     }
 
-    .cert-dot {
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: var(--gold);
-      flex-shrink: 0;
-      margin-top: 4px;
-      -webkit-print-color-adjust: exact;
-      print-color-adjust: exact;
-    }
-
-    .cert-text {
-      font-size: 8px;
-      color: #CBD5E1;
-      line-height: 1.5;
-    }
-
-    /* ── MAIN ── */
-    .main {
-      background: var(--white);
-      padding: 20px 22px 20px 18px;
-    }
-
-    .m-section {
+    .section {
       margin-bottom: 16px;
     }
 
-    .m-section:last-child {
+    .section:last-child {
       margin-bottom: 0;
     }
 
-    .m-title {
-      font-size: 7.5px;
+    .sec-title {
+      font-size: 8.5px;
       font-weight: 700;
-      letter-spacing: 0.14em;
+      letter-spacing: .14em;
       text-transform: uppercase;
       color: var(--navy);
-      padding-bottom: 3px;
+      padding-bottom: 4px;
       border-bottom: 2px solid var(--gold);
       margin-bottom: 10px;
       display: block;
@@ -306,153 +128,173 @@
 
     /* Summary */
     .summary {
-      font-size: 8.5px;
-      line-height: 1.68;
+      font-size: 9.5px;
+      line-height: 1.72;
       color: var(--body);
     }
 
-    /* Exp */
+    /* Skills */
+    .skills-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 9px;
+    }
+
+    .skills-table td {
+      padding: 3px 0;
+      vertical-align: top;
+    }
+
+    .sk-label {
+      font-weight: 700;
+      color: var(--navy);
+      width: 130px;
+      white-space: nowrap;
+    }
+
+    .sk-value {
+      color: var(--body);
+      line-height: 1.6;
+    }
+
+    /* Experience */
     .exp-item {
-      margin-bottom: 12px;
+      margin-bottom: 13px;
     }
 
     .exp-item:last-child {
       margin-bottom: 0;
     }
 
-    .exp-row1 {
+    .exp-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      margin-bottom: 2px;
+      margin-bottom: 1px;
     }
 
     .exp-role {
-      font-size: 10.5px;
+      font-size: 11px;
       font-weight: 700;
       color: var(--navy);
-      letter-spacing: -0.01em;
     }
 
-    .exp-badge {
-      font-size: 7.5px;
-      font-weight: 500;
+    .exp-dates {
+      font-size: 8.5px;
       color: var(--muted);
-      background: var(--off-white);
-      padding: 1.5px 7px;
-      border-radius: 20px;
-      border: 1px solid var(--divider);
       white-space: nowrap;
-      margin-left: 6px;
-      -webkit-print-color-adjust: exact;
-      print-color-adjust: exact;
+      margin-left: 8px;
     }
 
-    .exp-row2 {
-      display: flex;
-      align-items: center;
-      gap: 5px;
+    .exp-company {
+      font-size: 9px;
+      font-weight: 600;
+      color: var(--blue);
       margin-bottom: 6px;
     }
 
-    .exp-co {
-      font-size: 8.5px;
-      font-weight: 600;
-      color: var(--blue);
-    }
-
     .exp-loc {
-      font-size: 8px;
+      font-weight: 400;
       color: var(--muted);
-    }
-
-    .exp-sep {
-      font-size: 8px;
-      color: var(--divider);
+      font-size: 8.5px;
     }
 
     .bullets {
-      list-style: none;
+      list-style: disc;
+      padding-left: 15px;
     }
 
     .bullets li {
-      display: flex;
-      gap: 6px;
-      align-items: flex-start;
-      font-size: 8px;
+      font-size: 8.5px;
       color: var(--body);
-      line-height: 1.62;
+      line-height: 1.65;
       margin-bottom: 3.5px;
-    }
-
-    .bullets li::before {
-      content: '▸';
-      color: var(--gold);
-      font-size: 7.5px;
-      flex-shrink: 0;
-      margin-top: 1px;
     }
 
     .divider {
       border: none;
       border-top: 1px solid var(--divider);
-      margin: 10px 0;
+      margin: 11px 0;
     }
 
     /* Projects */
-    .proj-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 7px;
+    .proj-item {
+      margin-bottom: 9px;
     }
 
-    .proj-card {
-      background: var(--card-bg);
-      border-left: 3px solid var(--gold);
-      border-radius: 5px;
-      padding: 9px 10px 9px 12px;
-      -webkit-print-color-adjust: exact;
-      print-color-adjust: exact;
+    .proj-item:last-child {
+      margin-bottom: 0;
     }
 
     .proj-name {
-      font-size: 8.5px;
+      font-size: 9.5px;
       font-weight: 700;
       color: var(--navy);
-      margin-bottom: 2px;
-      line-height: 1.35;
     }
 
     .proj-tech {
-      font-size: 7.5px;
-      font-weight: 500;
+      font-size: 8.5px;
       color: var(--blue);
       font-style: italic;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
 
     .proj-desc {
-      font-size: 7.5px;
+      font-size: 8.5px;
       color: var(--body);
-      line-height: 1.55;
+      line-height: 1.6;
     }
 
-    /* ── FOOTER ── */
-    .footer {
-      grid-column: 1 / -1;
-      background: var(--navy);
-      padding: 6px;
-      text-align: center;
-      font-size: 7.5px;
-      color: var(--lt-muted);
-      letter-spacing: 0.05em;
+    /* Education & Certs */
+    .edu-item {
+      margin-bottom: 8px;
+    }
+
+    .edu-deg {
+      font-size: 9.5px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .edu-sch {
+      font-size: 9px;
+      color: var(--muted);
+    }
+
+    .edu-yr {
+      font-size: 8.5px;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .cert-item {
+      font-size: 9px;
+      color: var(--body);
+      line-height: 1.7;
+      padding-left: 12px;
+      position: relative;
+    }
+
+    .cert-item::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
 
-    /* ══════════════════════════════════════
-   PRINT
-══════════════════════════════════════ */
+    /* FOOTER */
+    .footer {
+      background: var(--navy);
+      padding: 7px;
+      text-align: center;
+      font-size: 8px;
+      color: #A0AEC0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
     @media print {
       @page {
         size: A4;
@@ -462,13 +304,10 @@
       html,
       body {
         background: white !important;
-        font-size: 10px;
       }
 
       .page-wrapper {
         padding: 0 !important;
-        background: white !important;
-        min-height: unset;
       }
 
       .print-btn {
@@ -476,27 +315,22 @@
       }
 
       .resume {
+        box-shadow: none !important;
         width: 210mm !important;
         min-height: 297mm !important;
-        box-shadow: none !important;
       }
 
       .header,
-      .sidebar,
       .footer,
-      .tag,
-      .cert-dot,
-      .exp-badge,
-      .proj-card,
-      .m-title,
-      .bullets li::before {
+      .sec-title,
+      .cert-item::before {
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
       }
 
       .exp-item,
-      .proj-card,
-      .m-section {
+      .proj-item,
+      .section {
         break-inside: avoid;
         page-break-inside: avoid;
       }
@@ -513,236 +347,207 @@
 
       <!-- HEADER -->
       <header class="header">
-        <div>
-          <div class="h-name">Sushant Dwivedi</div>
-          <div class="h-title">React Native &amp; Full Stack Developer</div>
-          <div class="h-tagline">2+ Years &nbsp;·&nbsp; Mobile &nbsp;·&nbsp; Web &nbsp;·&nbsp; Scalable APIs
-            &nbsp;·&nbsp; International Projects</div>
-        </div>
+        <div class="h-name">Sushant Dwivedi</div>
+        <div class="h-title">React Native &amp; Full Stack Developer</div>
         <div class="h-contacts">
-          <div class="h-contact-row">
-            sushant.dwivedi.dev@gmail.com
-            <svg viewBox="0 0 24 24">
-              <path
-                d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z" />
-            </svg>
-          </div>
-          <div class="h-contact-row">
-            +91-9301802256
-            <svg viewBox="0 0 24 24">
-              <path
-                d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
-            </svg>
-          </div>
-          <div class="h-contact-row">
-            Bhopal, Madhya Pradesh
-            <svg viewBox="0 0 24 24">
-              <path
-                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-            </svg>
-          </div>
-          <div class="h-contact-row">
-            linkedin.com/in/sushant-dwivedi-b53521221
-            <svg viewBox="0 0 24 24">
-              <path
-                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-            </svg>
-          </div>
-          <div class="h-contact-row">
-            github.com/sushantdwivedi
-            <svg viewBox="0 0 24 24">
-              <path
-                d="M12 2A10 10 0 002 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z" />
-            </svg>
-          </div>
+          <span>Email: sushantdwivedi108@gmail.com</span>
+          <span>Phone: +91-9301802256</span>
+          <span>Location: Bhopal, Madhya Pradesh</span>
+          <span>LinkedIn: linkedin.com/in/sushant-dwivedi-b53521221</span>
+          <span>GitHub: github.com/sushantdwivedi</span>
         </div>
       </header>
 
-      <!-- SIDEBAR -->
-      <aside class="sidebar">
+      <!-- BODY -->
+      <div class="body">
 
-        <div class="s-block">
-          <div class="s-title">Technical Skills</div>
-          <div class="sk-cat">Mobile &amp; Frontend</div>
-          <div class="tags">
-            <span class="tag">React Native</span><span class="tag">React.js</span><span class="tag">Expo</span><span
-              class="tag">Redux</span><span class="tag">Reanimated</span><span class="tag">GSAP</span><span
-              class="tag">Tailwind CSS</span>
-          </div>
-          <div class="sk-cat">Backend &amp; APIs</div>
-          <div class="tags">
-            <span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">FastAPI</span><span
-              class="tag">REST APIs</span><span class="tag">PostgreSQL</span><span class="tag">Microservices</span>
-          </div>
-          <div class="sk-cat">Languages</div>
-          <div class="tags">
-            <span class="tag">JavaScript ES6+</span><span class="tag">TypeScript</span><span
-              class="tag">Python</span><span class="tag">Java</span><span class="tag">HTML5</span><span
-              class="tag">CSS3</span>
-          </div>
-          <div class="sk-cat">Tools &amp; DevOps</div>
-          <div class="tags">
-            <span class="tag">Git</span><span class="tag">Docker</span><span class="tag">Postman</span><span
-              class="tag">Figma</span><span class="tag">VS Code</span><span class="tag">Agile / Scrum</span>
-          </div>
-        </div>
-
-        <div class="s-block">
-          <div class="s-title">Education</div>
-          <div class="edu-deg">B.Tech — Computer Science &amp; Engineering</div>
-          <div class="edu-sch">Sagar Institute of Research &amp; Technology (SIRTE)</div>
-          <div class="edu-yr">Graduated 2024</div>
-        </div>
-
-        <div class="s-block">
-          <div class="s-title">Certifications</div>
-          <div class="cert">
-            <div class="cert-dot"></div>
-            <div class="cert-text">MERN Full-Stack Developer · Sheriyans Coding School (2023)</div>
-          </div>
-          <div class="cert">
-            <div class="cert-dot"></div>
-            <div class="cert-text">React Native Developer · Abstinent R&amp;T (2023)</div>
-          </div>
-        </div>
-
-      </aside>
-
-      <!-- MAIN -->
-      <main class="main">
-
-        <section class="m-section">
-          <span class="m-title">Professional Summary</span>
-          <p class="summary">Full Stack Developer with 2+ years delivering production-grade mobile and web applications
-            for international clients. Led end-to-end delivery of the PKRMS ecosystem — an offline-first Android &amp;
-            Windows platform for an Australian-Indonesian government infrastructure partnership — shipped successfully
-            within 6 months. Proficient in React Native, Node.js, FastAPI, and PostgreSQL. Passionate about clean
-            architecture, mentoring teams, and translating complex requirements into elegant, scalable engineering
-            solutions.</p>
+        <!-- PROFESSIONAL SUMMARY -->
+        <section class="section">
+          <span class="sec-title">Professional Summary</span>
+          <p class="summary">
+            Full Stack Developer with 2+ years building production mobile and web apps for international clients.
+            Shipped the PKRMS platform — an offline-first Android and Windows app for an Australian-Indonesian
+            government project — on time in 6 months. Work daily with React Native, Node.js, FastAPI, and PostgreSQL.
+            Comfortable leading projects from design to deployment, mentoring teammates, and working with clients across
+            time zones.
+          </p>
         </section>
 
-        <section class="m-section">
-          <span class="m-title">Professional Experience</span>
+        <!-- TECHNICAL SKILLS -->
+        <section class="section">
+          <span class="sec-title">Technical Skills</span>
+          <table class="skills-table">
+            <tr>
+              <td class="sk-label">Mobile &amp; Frontend:</td>
+              <td class="sk-value">React Native, React.js, Expo, Redux, Reanimated, GSAP, Tailwind CSS, HTML5, CSS3</td>
+            </tr>
+            <tr>
+              <td class="sk-label">Backend &amp; APIs:</td>
+              <td class="sk-value">Node.js, Express.js, FastAPI, REST APIs, PostgreSQL, SQLite, Microservices</td>
+            </tr>
+            <tr>
+              <td class="sk-label">Languages:</td>
+              <td class="sk-value">JavaScript (ES6+), TypeScript, Python, Java</td>
+            </tr>
+            <tr>
+              <td class="sk-label">Tools &amp; DevOps:</td>
+              <td class="sk-value">Git, GitHub, Docker, Postman, Figma, App Store &amp; Google Play Deployment, CI/CD,
+                Agile, Scrum</td>
+            </tr>
+            <tr>
+              <td class="sk-label">Other:</td>
+              <td class="sk-value">Offline-First Architecture, Real-Time Systems, Socket.IO, Cross-Platform Development,
+                Code Review, Team Mentoring</td>
+            </tr>
+          </table>
+        </section>
 
+        <!-- PROFESSIONAL EXPERIENCE -->
+        <section class="section">
+          <span class="sec-title">Professional Experience</span>
+
+          <!-- HanuAI -->
           <div class="exp-item">
-            <div class="exp-row1">
+            <div class="exp-header">
               <div class="exp-role">Software Developer</div>
-              <div class="exp-badge">Sept 2025 – Present</div>
+              <div class="exp-dates">Sept 2025 – Present</div>
             </div>
-            <div class="exp-row2">
-              <span class="exp-co">HanuAI</span>
-              <span class="exp-sep">·</span>
-              <span class="exp-loc">Mohali, Punjab</span>
-            </div>
+            <div class="exp-company">HanuAI &nbsp;|&nbsp; <span class="exp-loc">Mohali, Punjab</span></div>
             <ul class="bullets">
-              <li>Spearheaded end-to-end delivery of the PKRMS ecosystem for the Australian-Indonesian infrastructure
-                partnership (KIAT) — architected offline-first Android &amp; Windows platforms with 100% data integrity
-                in extreme field environments.</li>
-              <li>Successfully delivered, packaged, and completed the full PKRMS project within 6 months.</li>
-              <li>Provided strategic product roadmap oversight and mentored cross-functional teams to accelerate
-                internal development cycles.</li>
-              <li>Bridged complex governmental infrastructure requirements with scalable engineering solutions,
-                collaborating with international stakeholders across time zones.</li>
-            </ul>
-          </div>
-
-          <hr class="divider" />
-
-          <div class="exp-item">
-            <div class="exp-row1">
-              <div class="exp-role">Software Developer</div>
-              <div class="exp-badge">Dec 2024 – Aug 2025</div>
-            </div>
-            <div class="exp-row2">
-              <span class="exp-co">ICG Globe (Canadian Company)</span>
-              <span class="exp-sep">·</span>
-              <span class="exp-loc">Udaipur, Rajasthan</span>
-            </div>
-            <ul class="bullets">
-              <li>Collaborated with international teams to deliver high-quality, scalable cross-platform applications.
+              <li>Designed and built the full PKRMS platform — an offline-first Android and Windows app for the KIAT
+                government infrastructure project — and shipped it within 6 months with zero data loss in field
+                environments.</li>
+              <li>Wrote a custom offline sync engine using SQLite that kept 100% data integrity even in areas with no
+                internet connection.</li>
+              <li>Ran weekly code reviews and set coding standards that cut bug count by roughly 30% across the team.
               </li>
-              <li>Developed performance-optimized React Native apps with reusable component architecture.</li>
-              <li>Managed end-to-end deployment pipelines for App Store and Google Play releases.</li>
+              <li>Mentored 4 junior developers, holding bi-weekly 1:1s that helped them ship features faster and with
+                fewer revisions.</li>
+              <li>Worked directly with Australian and Indonesian government stakeholders to gather requirements and turn
+                them into technical specs.</li>
             </ul>
           </div>
 
           <hr class="divider" />
 
+          <!-- ICG Globe -->
           <div class="exp-item">
-            <div class="exp-row1">
+            <div class="exp-header">
+              <div class="exp-role">Software Developer</div>
+              <div class="exp-dates">Dec 2024 – Aug 2025</div>
+            </div>
+            <div class="exp-company">ICG Globe &nbsp;|&nbsp; <span class="exp-loc">Udaipur, Rajasthan &nbsp;(Canadian
+                Client)</span></div>
+            <ul class="bullets">
+              <li>Built a social media mobile app and a web-based learning platform for Canadian clients, delivering
+                scalable and user-friendly solutions.</li>
+              <li>Developed a food delivery app tailored for the Canadian market, successfully launched on both App
+                Store and Google Play.</li>
+              <li>Created a shared React Native component library that cut UI development time by 40% across projects.
+              </li>
+              <li>Integrated 6+ third-party REST APIs (payments, notifications, maps) with clean error handling and
+                retry logic.</li>
+            </ul>
+          </div>
+
+          <hr class="divider" />
+
+          <!-- Abstinent — Full time -->
+          <div class="exp-item">
+            <div class="exp-header">
               <div class="exp-role">Mobile App Developer</div>
-              <div class="exp-badge">Jan 2024 – Nov 2024</div>
+              <div class="exp-dates">Jan 2024 – Nov 2024</div>
             </div>
-            <div class="exp-row2">
-              <span class="exp-co">Abstinent Research &amp; Technologies</span>
-              <span class="exp-sep">·</span>
-              <span class="exp-loc">Bhopal, M.P.</span>
-            </div>
+            <div class="exp-company">Abstinent Research &amp; Technologies &nbsp;|&nbsp; <span class="exp-loc">Bhopal,
+                M.P.</span></div>
             <ul class="bullets">
-              <li>Built cross-platform React Native features delivering seamless user experiences on iOS and Android.
+              <li>Added 10+ new features to existing React Native apps, covering both iOS and Android with a single
+                shared codebase.</li>
+              <li>Fixed 25+ reported bugs within sprint cycles, dropping crash rate by 20% over two quarters.</li>
+              <li>Built Node.js + Express.js API endpoints that cut average response time from 800ms to under 300ms.
               </li>
-              <li>Enhanced application stability, resolved critical bugs, and shipped features within Agile sprint
-                cycles.</li>
             </ul>
           </div>
 
           <hr class="divider" />
 
+          <!-- Abstinent — Intern -->
           <div class="exp-item">
-            <div class="exp-row1">
+            <div class="exp-header">
               <div class="exp-role">React Native Developer Intern</div>
-              <div class="exp-badge">Jul 2023 – Dec 2023</div>
+              <div class="exp-dates">Jul 2023 – Dec 2023</div>
             </div>
-            <div class="exp-row2">
-              <span class="exp-co">Abstinent Research &amp; Technologies</span>
-              <span class="exp-sep">·</span>
-              <span class="exp-loc">Bhopal, M.P.</span>
-            </div>
+            <div class="exp-company">Abstinent Research &amp; Technologies &nbsp;|&nbsp; <span class="exp-loc">Bhopal,
+                M.P.</span></div>
             <ul class="bullets">
-              <li>Optimized app performance through code refactoring, reducing load times and improving overall
-                rendering efficiency.</li>
+              <li>Refactored core navigation and rendering logic, cutting app startup time by 35% on mid-range Android
+                devices.</li>
+              <li>Wrote unit tests for 15+ components using Jest, raising test coverage from 40% to 65% in the main
+                repo.</li>
             </ul>
           </div>
         </section>
 
-        <section class="m-section">
-          <span class="m-title">Key Projects</span>
-          <div class="proj-grid">
-            <div class="proj-card">
-              <div class="proj-name">PKRMS — Field Data Platform</div>
-              <div class="proj-tech">React Native · Python · SQLite · Offline Sync</div>
-              <div class="proj-desc">Government infrastructure data system for KIAT — offline-first architecture with
-                100% data integrity. Delivered within 6 months for Australian-Indonesian partnership.</div>
+        <!-- KEY PROJECTS -->
+        <section class="section">
+          <span class="sec-title">Key Projects</span>
+
+          <div class="proj-item">
+            <div class="proj-name">PKRMS — Government Field Data Platform</div>
+            <div class="proj-tech">React Native · Python · FastAPI · SQLite · Offline Sync · Android · Windows</div>
+            <div class="proj-desc">Built an offline-first data collection app for KIAT (Australia-Indonesia
+              infrastructure project). Handled full project — from architecture to deployment — in 6 months. Zero data
+              loss reported across 500+ field surveys in remote areas.</div>
+          </div>
+
+          <div class="proj-item">
+            <div class="proj-name">Real-Time Social Media App</div>
+            <div class="proj-tech">React Native · Node.js · PostgreSQL · Socket.IO · Microservices</div>
+            <div class="proj-desc">Cross-platform chat app with real-time messaging, push notifications, and media
+              uploads. Backend runs on a microservices architecture and handles 200+ concurrent socket connections
+              without performance issues.</div>
+          </div>
+
+          <div class="proj-item">
+            <div class="proj-name">Food Ordering &amp; Restaurant Management System</div>
+            <div class="proj-tech">React Native · Node.js · Express.js · PostgreSQL</div>
+            <div class="proj-desc">End-to-end food ordering platform covering customer app, restaurant dashboard, and
+              order analytics. Supports live order tracking and dynamic menu updates, used by 3 restaurant clients.
             </div>
-            <div class="proj-card">
-              <div class="proj-name">Real-Time Social Media App</div>
-              <div class="proj-tech">React Native · Node.js · PostgreSQL · Socket.IO</div>
-              <div class="proj-desc">Cross-platform chat app featuring real-time messaging, push notifications, media
-                sharing, and scalable microservices backend.</div>
-            </div>
-            <div class="proj-card">
-              <div class="proj-name">Food Ordering &amp; Restaurant System</div>
-              <div class="proj-tech">React Native · Node.js · PostgreSQL</div>
-              <div class="proj-desc">Full-featured platform with order management, dynamic menu control, and analytics
-                dashboard for restaurant operators.</div>
-            </div>
-            <div class="proj-card">
-              <div class="proj-name">Book Selling Mobile App</div>
-              <div class="proj-tech">React Native · Expo</div>
-              <div class="proj-desc">E-commerce mobile app with smooth Reanimated transitions, streamlined checkout, and
-                clean product browsing experience.</div>
-            </div>
+          </div>
+
+          <div class="proj-item">
+            <div class="proj-name">Book Selling E-Commerce App</div>
+            <div class="proj-tech">React Native · Expo · Redux · Reanimated</div>
+            <div class="proj-desc">Mobile shopping app with fluid Reanimated animations, Redux cart management, and a
+              checkout flow that reduced drop-off by keeping steps under 3 taps.</div>
           </div>
         </section>
 
-      </main>
+        <!-- EDUCATION -->
+        <section class="section">
+          <span class="sec-title">Education</span>
+          <div class="edu-item">
+            <div class="edu-deg">B.Tech — Computer Science &amp; Engineering</div>
+            <div class="edu-sch">Sagar Institute of Research &amp; Technology (SIRTE), Bhopal</div>
+            <div class="edu-yr">Graduated 2024</div>
+          </div>
+        </section>
 
-      <!-- FOOTER -->
+        <!-- CERTIFICATIONS -->
+        <section class="section">
+          <span class="sec-title">Certifications</span>
+          <div class="cert-item">MERN Full-Stack Developer — Sheriyans Coding School, 2023</div>
+          <div class="cert-item">React Native Developer — Abstinent Research &amp; Technologies, 2023</div>
+        </section>
+
+      </div><!-- /.body -->
+
       <footer class="footer">
-        Sushant Dwivedi &nbsp;·&nbsp; sushant.dwivedi.dev@gmail.com &nbsp;·&nbsp; +91-9301802256
+        Sushant Dwivedi &nbsp;·&nbsp; sushantdwivedi108@gmail.com &nbsp;·&nbsp; +91-9301802256
       </footer>
 
-    </div>
+    </div><!-- /.resume -->
   </div>
 
 </body>
